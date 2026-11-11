@@ -105,28 +105,37 @@ function App() {
         </section>
 
         <section id="experience" className="section">
-          <p className="eyebrow">MY JOURNEY</p>
-          <h2>Experience</h2>
+  <p className="eyebrow">MY JOURNEY</p>
+  <h2>Experience</h2>
 
-          <div className="experience-card">
-            <h3>Digital Health Young Scholars</h3>
-            <p className="muted">Rice University</p>
-            <p>
-              Participated in a digital health research program
-              exploring how computer science, electronics, and
-              engineering can be applied to healthcare technology.
-            </p>
-          </div>
+  <div className="timeline">
 
-          <div className="experience-card">
-            <h3>Student Leadership</h3>
-            <p className="muted">College Organizations</p>
-            <p>
-              Built leadership, communication, and teamwork
-              skills through student organization involvement.
-            </p>
-          </div>
-        </section>
+    <article className="timeline-item">
+      <div className="timeline-content">
+        <span className="timeline-date">2025</span>
+        <h3>Digital Health Young Scholars</h3>
+        <p className="muted">Rice University</p>
+        <p>
+          Explored digital health technology and worked on
+          a wearable health-monitoring prototype.
+        </p>
+      </div>
+    </article>
+
+    <article className="timeline-item">
+      <div className="timeline-content">
+        <span className="timeline-date">Ongoing</span>
+        <h3>Student Leadership</h3>
+        <p className="muted">College Organizations</p>
+        <p>
+          Developed leadership, communication, and teamwork
+          skills through student involvement.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
 
         <section id="projects" className="section">
           <p className="eyebrow">WHAT I'VE BUILT</p>
