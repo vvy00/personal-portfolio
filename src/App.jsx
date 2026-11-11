@@ -1,33 +1,51 @@
 
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
-    <>
+    <div className={darkMode ? 'app dark' : 'app light'}>
       <nav className="navbar">
         <a href="#home" className="logo">Vanessa.</a>
 
-        <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
+        <div className="nav-right">
+          <div className="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+          </div>
+
+          <button
+            className="theme-toggle"
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle light and dark mode"
+          >
+            {darkMode ? '☀️' : '🌙'}
+          </button>
         </div>
       </nav>
 
       <main>
-        {/* HOME */}
         <section id="home" className="hero">
-          <p className="eyebrow">ASPIRING FULL-STACK SOFTWARE DEV</p>
+          <div className="hero-glow"></div>
+
+          <p className="eyebrow">ASPIRING SOFTWARE DEVELOPER</p>
 
           <h1>
             Hi, I'm <span className="typing-wrapper">
               <span className="typing-name">Vanessa.</span>
-              </span>
+            </span>
           </h1>
 
           <p className="hero-description">
-            I'm a Computer Science student at UT Dallas, originally from Houston, Texas. I enjoy building projects, exploring new technologies, and solving real-world problems through software. I'm always looking for opportunities to learn, collaborate, and turn ideas into something meaningful.
+            I'm a Computer Science student at UT Dallas, originally from
+            Houston, Texas. I enjoy building projects, exploring new
+            technologies, and solving real-world problems through software.
+            I'm always looking for opportunities to learn, collaborate,
+            and turn ideas into something meaningful.
           </p>
 
           <div className="hero-buttons">
@@ -45,17 +63,15 @@ function App() {
           </div>
         </section>
 
-        {/* ABOUT */}
         <section id="about" className="section">
           <p className="eyebrow">GET TO KNOW ME</p>
           <h2>About Me</h2>
 
           <p>
-            I'm a Computer Science student passionate about
-            software development and exploring how AI can
-            be applied to real-world challenges. I enjoy
-            learning new technologies, collaborating with
-            others, and turning ideas into working projects.
+            I'm a Computer Science student interested in software
+            development, technology, and solving real-world problems.
+            I enjoy learning new tools, collaborating with others,
+            and turning ideas into working projects.
           </p>
 
           <h3>Technical Skills</h3>
@@ -73,16 +89,28 @@ function App() {
           </div>
         </section>
 
-        {/* EXPERIENCE */}
+        <section id="education" className="section">
+          <p className="eyebrow">MY BACKGROUND</p>
+          <h2>Education</h2>
+
+          <div className="experience-card">
+            <h3>University of Texas at Dallas</h3>
+            <p className="muted">Computer Science</p>
+            <p>
+              Pursuing a degree in Computer Science while building
+              a foundation in programming, software development,
+              and computer systems.
+            </p>
+          </div>
+        </section>
+
         <section id="experience" className="section">
           <p className="eyebrow">MY JOURNEY</p>
           <h2>Experience</h2>
 
           <div className="experience-card">
-            <h3>Digital Health Young Scholars Intern</h3>
-            <p className="muted">
-              Rice University
-            </p>
+            <h3>Digital Health Young Scholars</h3>
+            <p className="muted">Rice University</p>
             <p>
               Participated in a digital health research program
               exploring how computer science, electronics, and
@@ -92,9 +120,7 @@ function App() {
 
           <div className="experience-card">
             <h3>Student Leadership</h3>
-            <p className="muted">
-              College Organizations
-            </p>
+            <p className="muted">College Organizations</p>
             <p>
               Built leadership, communication, and teamwork
               skills through student organization involvement.
@@ -102,14 +128,17 @@ function App() {
           </div>
         </section>
 
-        {/* PROJECTS */}
         <section id="projects" className="section">
           <p className="eyebrow">WHAT I'VE BUILT</p>
           <h2>Projects</h2>
 
           <div className="project-grid">
             <article className="project-card">
-              <p className="project-number">01 / HARDWARE</p>
+              <div className="project-visual ring-visual">
+                <span>01</span>
+                <p>HARDWARE & HEALTH TECH</p>
+              </div>
+
               <h3>Smart Health Ring</h3>
               <p>
                 A wearable health-monitoring prototype using
@@ -124,7 +153,11 @@ function App() {
             </article>
 
             <article className="project-card">
-              <p className="project-number">02 / MACHINE LEARNING</p>
+              <div className="project-visual ml-visual">
+                <span>02</span>
+                <p>MACHINE LEARNING</p>
+              </div>
+
               <h3>Machine Learning Models</h3>
               <p>
                 Built and evaluated classification models,
@@ -139,6 +172,23 @@ function App() {
             </article>
           </div>
         </section>
+
+        <section id="contact" className="section contact-section">
+          <p className="eyebrow">LET'S CONNECT</p>
+          <h2>Have a project in mind?</h2>
+          <p>
+            I'm always open to connecting, collaborating,
+            and learning about new opportunities.
+          </p>
+          <a
+            href="https://github.com/vvy00"
+            target="_blank"
+            rel="noreferrer"
+            className="button"
+          >
+            Find me on GitHub ↗
+          </a>
+        </section>
       </main>
 
       <footer>
@@ -149,7 +199,7 @@ function App() {
           GitHub ↗
         </a>
       </footer>
-    </>
+    </div>
   );
 }
 
